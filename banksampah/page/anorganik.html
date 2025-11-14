@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harga Sampah Organik</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo"
+        ><img src="../logo.png" alt="Logo">BANKSAMPAH</a
+      >
+
+      <ul class="menu">
+        <li><a href="../index.html">Beranda</a></li>
+        <li><a href="../index.html#tentang">Tentang</a></li>
+        <li><a href="kritik-saran.html">Kritik Dan Saran</a></li>
+      </ul>
+      <div class="tombol">&#9776;</div>
+    </div>
+  </nav>
+<marquee
+  behavior="scroll"
+  direction="left"
+  style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0)"
+  >Jangan Lupa Buang Sampah Pada Tempatnya Yaaa!!</marquee
+>
+    <section class="table-section">
+      <div class="table-container">
+          <h2>Daftar Harga Sampah Anorganik</h2>
+          <table class="tabel">
+              <thead>
+                  <tr>
+                      <th>No</th>
+                      <th>Nama Sampah</th>
+                      <th>Gambar</th>
+                      <th>Deskripsi</th>
+                      <th>Harga</th>
+                      
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>1</td>
+                      <td>Plastik</td>
+                      <td>
+                          <img src="../asset/Anorganik/Plastik.jpg" alt="Sisa Makanan">
+                      </td>
+                      <td>Sisa Sampah Plastik</td>
+                      <td>Rp 2.000/kg</td>
+  
+                  </tr>
+                  <tr>
+                      <td>2</td>
+                      <td>Besi</td>
+                      <td>
+                          <img src="../asset/Anorganik/besi.jpg" alt="Daun Kering">
+                      </td>
+                      <td>Sisa Besi Tidak Terpakai Atau Berkarat</td>
+                      <td>Rp 5.000/kg</td>
+                    
+                  </tr>
+                  <tr>
+                      <td>3</td>
+                      <td>Ban Bekas</td>
+                      <td>
+                          <img src="../asset/Anorganik/Ban-Bekas.jpg" alt="Sisa Sayuran">
+                      </td>
+                      <td>Sisa Ban Mobil</td>
+                      <td>Rp 2.500/kg</td>
+                     
+                  </tr>
+                  <tr>
+                      <td>4</td>
+                      <td>Sampah Kaca</td>
+                      <td>
+                          <img src="../asset/Anorganik/sampah-kaca.jpg" alt="Kulit Buah">
+                      </td>
+                      <td>Sisa Pecahan Kaca Atau Sisa Minuman Kemasan Kaca</td>
+                      <td>Rp 2000/kg</td>
+                     
+                  </tr>
+                  <tr>
+                      <td>5</td>
+                      <td>Sampah Elektronik</td>
+                      <td>
+                          <img src="../asset/Anorganik/Elektronik.jpg" alt="Ranting & Kayu">
+                      </td>
+                      <td>Sisa Computer Rusak</td>
+                      <td>Rp 500/kg</td>
+                     
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <a href="form-anorganik.html" class="btn">Jual</a>
+
+  </section>
+
+  
+      <br><br>
+    <script type="text/javascript">
+      const tombol = document.querySelector(".tombol");
+      const menu = document.querySelector(".menu");
+      tombol.addEventListener("click", () => {
+        menu.classList.toggle("aktif");
+      });
+    </script>
+  </body>
+</html>

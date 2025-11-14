@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Struk Setoran Sampah</title>
+  <link rel="stylesheet" href="struk.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+</head>
+<body>
+  <div class="struk-container">
+    <h1>Struk Setoran Sampah</h1>
+    <table id="strukTable"></table>
+    <div class="buttons">
+      <button class="btn" onclick="goToHome()">Kembali ke Halaman Utama</button>
+      <button class="btn" onclick="printPage()">Cetak Struk</button>
+    </div>
+    <div class="footer">
+      <p>Terima kasih telah menyetor sampah di BANK SAMPAH!</p>
+    </div>
+  </div>
+
+  <script>
+    
+    //mengambil data
+    
+    const data = JSON.parse(localStorage.getItem('strukData'));
+
+    //menampilkan data  
+    if (data) {
+      const strukTable = document.getElementById('strukTable');
+      strukTable.innerHTML = `
+        <tr><td>Nama</td><td>: ${data.nama}</td></tr>
+        <tr><td>Alamat</td><td>: ${data.alamat}</td></tr>
+        <tr><td>Jenis Sampah</td><td>: ${data.jenisSampah}</td></tr>
+        <tr><td>Berat</td><td>: ${data.berat} kg</td></tr>
+        <tr><td>Total Harga</td><td>: Rp ${data.totalHarga.toLocaleString('id-ID')}</td></tr>
+        <tr><td>Tanggal</td><td>: ${data.tanggal}</td></tr>
+        <tr><td>No. Telepon</td><td>: ${data.noTelp}</td></tr>
+        ${data.foto ? `<tr><td>Foto</td><td>: <img src="${data.foto}" alt="Foto Sampah" width="150"></td></tr>` : ''}
+      `;
+    } else {
+      document.body.innerHTML = '<h1>Data tidak tersedia</h1>';
+    }
+
+    //jika diklik kembali ke beranda
+    function goToHome() {
+      window.location.href = '../index.html'; 
+    }
+
+    //untuk tombol print atau cetak
+    function printPage() {
+      window.print();
+    }
+
+   
+    //jika di ctrl + p akan langsung masuk ke print
+  document.addEventListener('keydown', function(event) {
+   
+    if (event.ctrlKey && event.key === 'p') {
+      event.preventDefault(); 
+      window.print();
+    }
+  });
+</script>
+
+  </script>
+</body>
+</html>

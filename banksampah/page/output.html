@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Output Penyewaan</title>
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(to right, #446275, #8e44ad); 
+        margin: 0;
+        padding: 0;
+      }
+
+      h2 {
+        text-align: center;
+        color: #fff;
+        margin-top: 30px;
+        font-size: 2.5em;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); 
+      }
+
+      .output-box {
+        width: 80%;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 30px;
+        background-color: #f7f6f6;
+        border-radius: 15px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+        border: 1px solid #ddd;
+        transition: transform 0.3s, box-shadow 0.3s; 
+      }
+
+      .output-box p {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #333;
+      }
+
+      .output-box p strong {
+        color: #5e423f; 
+      }
+
+      .output-box p + p {
+        margin-top: 12px;
+      }
+
+      
+      .output-box:hover {
+        transform: scale(1.05); 
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      
+      .back-button {
+        display: block;
+        width: 220px;
+        margin: 20px auto;
+        padding: 15px;
+        text-align: center;
+        background: linear-gradient(135deg, #3c4996, #46677c); 
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 12px;
+        font-size: 20px;
+        font-weight: bold;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+        transition: background 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .back-button:hover {
+        background: linear-gradient(135deg, #1c3546, #472724); 
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4); 
+      }
+
+      @media (max-width: 768px) {
+        .output-box {
+          width: 90%;
+        }
+
+        h2 {
+          font-size: 2em;
+        }
+
+        .back-button {
+          width: 100%;
+          padding: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+      <nav class="navbar"></nav>
+    <h2>Data Penyewaan Mobil</h2>
+
+    <div class="output-box" id="output"></div>
+
+    <a href="../index.html" class="back-button">Kembali ke Beranda</a>
+
+    <script type="text/javascript">
+      let nama = localStorage.getItem("nama");
+      let nik = localStorage.getItem("nik");
+      let telp = localStorage.getItem("telp");
+      let email = localStorage.getItem("email");
+      let alamat = localStorage.getItem("alamat");
+      let nmmobil = localStorage.getItem("nmmobil");
+      let tglpinjam = localStorage.getItem("tglpinjam");
+      let tglkembali = localStorage.getItem("tglkembali");
+      let metode = localStorage.getItem("metode");
+
+      let output = document.getElementById("output");
+      output.innerHTML = `
+        <p><strong>Nama Penyewa:</strong> ${nama}</p>
+        <p><strong>NIK:</strong> ${nik}</p>
+        <p><strong>No Telp:</strong> ${telp}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Alamat:</strong> ${alamat}</p>
+        <p><strong>Nama Mobil:</strong> ${nmmobil}</p>
+        <p><strong>Tanggal Penyewaan:</strong> ${tglpinjam}</p>
+        <p><strong>Tanggal Kembali:</strong> ${tglkembali}</p>
+        <p><strong>Metode Pembayaran:</strong> ${metode}</p>
+      `;
+    </script>
+  </body>
+</html>

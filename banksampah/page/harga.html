@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harga Sampah Organik</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo"
+        ><img src="../logo.png" alt="Logo">BANKSAMPAH</a
+      >
+
+      <ul class="menu">
+        <li><a href="../index.html">Beranda</a></li>
+        <li><a href="../index.html#tentang">Tentang</a></li>
+        <li><a href="kritik-saran.html">Kritik Dan Saran</a></li>
+      </ul>
+      <div class="tombol">&#9776;</div>
+    </div>
+  </nav>
+<marquee
+  behavior="scroll"
+  direction="left"
+  style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0)"
+  >Jangan Lupa Buang Sampah Pada Tempatnya Yaaa!!</marquee
+>
+    <section class="table-section">
+      <div class="table-container">
+          <h2>Daftar Harga Sampah Organik</h2>
+          <table class="tabel">
+              <thead>
+                  <tr>
+                      <th>No</th>
+                      <th>Nama Sampah</th>
+                      <th>Gambar</th>
+                      <th>Deskripsi</th>
+                      <th>Harga</th>
+                      
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>1</td>
+                      <td>Sisa Makanan</td>
+                      <td>
+                          <img src="../asset/img/kompascom-5a17f6843c2c75736e50f052.jpg" alt="Sisa Makanan">
+                      </td>
+                      <td>Sisa makanan rumah tangga dalam kondisi bersih</td>
+                      <td>Rp 2.000/kg</td>
+  
+                  </tr>
+                  <tr>
+                      <td>2</td>
+                      <td>Daun Kering</td>
+                      <td>
+                          <img src="../asset/img/daun.jpeg" alt="Daun Kering">
+                      </td>
+                      <td>Dedaunan kering, bersih dari plastik</td>
+                      <td>Rp 1.500/kg</td>
+                    
+                  </tr>
+                  <tr>
+                      <td>3</td>
+                      <td>Sisa Sayuran</td>
+                      <td>
+                          <img src="../asset/img/Sayuran.jpg" alt="Sisa Sayuran">
+                      </td>
+                      <td>Sisa sayuran dari dapur</td>
+                      <td>Rp 2.500/kg</td>
+                     
+                  </tr>
+                  <tr>
+                      <td>4</td>
+                      <td>Kulit Buah</td>
+                      <td>
+                          <img src="../asset/img/buah.jpg" alt="Kulit Buah">
+                      </td>
+                      <td>Kulit buah-buahan dalam kondisi bersih</td>
+                      <td>Rp 2000/kg</td>
+                     
+                  </tr>
+                  <tr>
+                      <td>5</td>
+                      <td>Ranting & Kayu</td>
+                      <td>
+                          <img src="../asset/img/images.jpg" alt="Ranting & Kayu">
+                      </td>
+                      <td>Ranting pohon dan potongan kayu kecil</td>
+                      <td>Rp 1.000/kg</td>
+                     
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <a href="peminjaman-barang.html" class="btn">Jual</a>
+
+  </section>
+
+  
+      <br><br>
+    <script type="text/javascript">
+      const tombol = document.querySelector(".tombol");
+      const menu = document.querySelector(".menu");
+      tombol.addEventListener("click", () => {
+        menu.classList.toggle("aktif");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website Bank Sampah</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <style>
+      /* Dropdown styling */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 5px;
+        right: 0;
+      }
+
+      .dropdown-content a {
+        color: #333;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover,
+      #user-menu-trigger:hover {
+        background-color: #f1f1f1;
+        color: #28a745;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="#" class="logo"><img src="logo.png" alt="Logo" />BANKSAMPAH</a>
+
+        <ul class="menu">
+          <li><a href="#">Beranda</a></li>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="page/kritik-saran.html">Kritik Dan Saran</a></li>
+          <li id="login-nav"><a href="page/login.html">Login</a></li>
+        </ul>
+        <div class="tombol">&#9776;</div>
+      </div>
+    </nav>
+    <marquee behavior="scroll" direction="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0)">Jangan Lupa Buang Sampah Pada Tempatnya Yaaa!!</marquee>
+
+    <!--Welcome-->
+    <section class="beranda-section" id="beranda">
+      <div class="welcome-text" id="welcome-text">
+        <h1>Selamat Datang di <span class="highlight">Website Bank Sampah</span></h1>
+        <p class="subtitle">Bersama kita wujudkan lingkungan yang lebih bersih dan sehat.</p>
+        <a href="page/login.html?redirect=daftar-mobil.html" class="btn-beranda" id="jual-sekarang-btn">Jual Sekarang</a>
+      </div>
+    </section>
+
+    <!--About-->
+
+    <section class="tentang-section" id="tentang">
+      <!-- <div class="image-container">
+        <img src="asset/img/Logo-removebg-preview.png" alt="Deskripsi Gambar" />
+      </div> -->
+
+      <div class="mapouter">
+        <div class="gmap_canvas">
+          <iframe
+            class="gmap_iframe"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.0774965184746!2d107.65452499730495!3d-7.021570229119572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68ea103e160a0d%3A0x9dd6159ddbfd0632!2sJl.%20Laswi%20No.89%2C%20Baleendah%2C%20Kec.%20Baleendah%2C%20Kabupaten%20Bandung%2C%20Jawa%20Barat%2040375!5e0!3m2!1sid!2sid!4v1760584043345!5m2!1sid!2sid"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <div class="text-container">
+        <h2>Tentang Kami</h2>
+        <p>
+          Bank Sampah adalah konsep pengelolaan sampah berbasis komunitas yang mendorong masyarakat untuk menyetorkan sampah terpilah (organik dan anorganik). Berfungsi layaknya bank, sampah yang disetor akan dihargai dan dicatat sebagai
+          tabungan, memberikan insentif ekonomi langsung. Inisiatif ini tidak hanya efektif dalam mengurangi volume sampah yang dibuang ke TPA, tetapi juga menumbuhkan kesadaran kolektif terhadap daur ulang dan menciptakan lingkungan yang
+          lebih bersih dan berkelanjutan.
+        </p>
+      </div>
+    </section>
+    <footer>
+      <p>Customer Service: <a href="mailto:banksampah@gmail.com">banksampah@gmail.com</a></p>
+      <p>Telepon: <a href="tel:+6281252328864">0895-1740-4508</a></p>
+      <p>&copy; 2025 Bank Sampah Jelekong. All rights reserved.</p>
+    </footer>
+
+    <script type="text/javascript">
+      const tombol = document.querySelector(".tombol");
+      const menu = document.querySelector(".menu");
+      tombol.addEventListener("click", () => {
+        menu.classList.toggle("aktif");
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
+        const loginNav = document.getElementById("login-nav");
+        const welcomeText = document.getElementById("welcome-text");
+        const jualSekarangBtn = document.getElementById("jual-sekarang-btn");
+
+        if (loggedInUser) {
+          const username = loggedInUser.username;
+
+          // Ubah teks sambutan
+          welcomeText.querySelector("h1").innerHTML = `Selamat Datang, <span class="highlight">${username}</span>`;
+          welcomeText.querySelector("p.subtitle").textContent = "Terima kasih telah bergabung bersama kami.";
+
+          // Ubah link tombol "Jual Sekarang" jika sudah login
+          jualSekarangBtn.href = "page/daftar-mobil.html";
+
+          // Ubah menu navigasi menjadi dropdown pengguna
+          loginNav.classList.add("dropdown");
+          loginNav.innerHTML = `
+            <a href="#" id="user-menu-trigger">${username} &#9662;</a>
+            <div class="dropdown-content" id="user-dropdown">
+              <a href="#" id="logout-link">Logout</a>
+            </div>
+          `;
+
+          // Event listener untuk toggle dropdown
+          document.getElementById("user-menu-trigger").addEventListener("click", function (e) {
+            e.preventDefault();
+            document.getElementById("user-dropdown").style.display = document.getElementById("user-dropdown").style.display === "block" ? "none" : "block";
+          });
+
+          // Event listener untuk logout
+          document.getElementById("logout-link").addEventListener("click", function (e) {
+            e.preventDefault();
+            sessionStorage.removeItem("loggedInUser");
+            alert("Anda telah berhasil logout.");
+            window.location.reload(); // Muat ulang halaman
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
